@@ -21,4 +21,3 @@ dump.rdb
 
 # Configuration
 .env
-/config/database.yml
