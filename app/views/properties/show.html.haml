@@ -54,6 +54,20 @@
 
       / end id sp-tabs
       #sp-content
+        #sp-content-overview.tab-content
+          %h2 Description
+          %div.license-capacity-info
+            %span.capacity
+              Capacity:
+              = @property.capacity.present? ? @property.capacity : 'N/A'
+            %span.license
+              Lisence number:
+              = "#{(@property.license_number.present? ?  @property.license_number : 'N/A')}"
+            .clear
+
+          %p
+            = @property.description
+        / end id sp-content-overview
         #sp-content-pricing.tab-content
           .t1
             %strong.name Room Type
@@ -140,20 +154,7 @@
 
 
 
-        #sp-content-overview.tab-content
-          %h2 Description
-          %div.license-capacity-info
-            %span.capacity
-              Capacity:
-              = @property.capacity.present? ? @property.capacity : 'N/A'
-            %span.license
-              Lisence number:
-              = "#{(@property.license_number.present? ?  @property.license_number : 'N/A')}"
-            .clear
 
-          %p
-            = @property.description
-        / end id sp-content-overview
 
         #sp-content-care.tab-content
           %h2 Care Services

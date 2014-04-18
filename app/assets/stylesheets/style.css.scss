@@ -1557,6 +1557,7 @@ ul#sg-list {
 /* content -> pricing */
 
 #sp-content-pricing {
+  display: none;
   float: left;
   width: 582px;
   height: auto;
@@ -1633,7 +1634,6 @@ ul#sg-list {
 /* content -> overview */
 
 #sp-content-overview {
-  display: none;
   float: left;
   width: 582px;
   height: auto;

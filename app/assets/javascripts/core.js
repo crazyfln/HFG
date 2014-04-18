@@ -134,13 +134,13 @@ $(document).ready(function () {
     });
 
     // Single Page -> Content
-    $('.t-pricing').click(function () {
-        $('.tab-content').slideUp();
-        $('#sp-content-pricing').slideDown();
-    });
     $('.t-overview').click(function () {
         $('.tab-content').slideUp();
         $('#sp-content-overview').slideDown();
+    });
+    $('.t-pricing').click(function () {
+        $('.tab-content').slideUp();
+        $('#sp-content-pricing').slideDown();
     });
     $('.t-care').click(function () {
         $('.tab-content').slideUp();

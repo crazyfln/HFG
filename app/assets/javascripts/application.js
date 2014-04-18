@@ -20,7 +20,7 @@
 
 $(document).ready(function(){
   initNyroModal();
-
+  
   // init fancybox media popup for vide player
   $('.fancybox-media').fancybox({
     openEffect  : 'none',

@@ -35,6 +35,7 @@
 
 
 @initDetailProperty = ()->
+  
   $li_container = $('li.t-culture a')
   $li_container.on 'click', (event)->
     $map_container = $('#property_location')
