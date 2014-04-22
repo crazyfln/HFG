@@ -28,8 +28,8 @@
             %li
               %a{class: "lazyImage"}
                 = image_tag pp.photo.preview.url, :alt => @property.name
-      .slideshow-viewport
-        #thumbs
+      #thumbs
+        .slideshow-viewport
           - if @property.property_photos.present?
             - @property.property_photos.each do |pp|
               .thumb
