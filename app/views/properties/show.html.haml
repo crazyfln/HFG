@@ -21,24 +21,56 @@
           &nbsp;
   / end id sp-header
   #sp-left
-    #cycle
-      %ul#cycle-list
+    #sliderFrame
+      #slider
         - if @property.property_photos.present?
           - @property.property_photos.each do |pp|
             %li
-              = image_tag pp.photo.preview.url, :alt => @property.name
-              %img{alt: "Img", src: "/assets/_temp/11.jpg"}
-        - else
-          %li
-            = image_tag PropertyPhoto.new.photo.preview.url, :alt => @property.name
-            %img{alt: "Img", src: "/assets/_temp/11.jpg"}
+              %a{class: "lazyImage"}
+                = image_tag pp.photo.preview.url, :alt => @property.name
+      .slideshow-viewport
+        #thumbs
+          - if @property.property_photos.present?
+            - @property.property_photos.each do |pp|
+              .thumb
+                = image_tag pp.photo.preview.url
+
+    / #cycle
+    /   %ul#cycle-list
+    /     - if @property.property_photos.present?
+    /       - @property.property_photos.each do |pp|
+    /         %li
+    /           = image_tag pp.photo.preview.url, :alt => @property.name
+    /           %img{alt: "Img", src: "/assets/_temp/11.jpg"}
+    /     - else
+    /       %li
+    /         = image_tag PropertyPhoto.new.photo.preview.url, :alt => @property.name
+    /         %img{alt: "Img", src: "/assets/_temp/11.jpg"}
 
 
-      / end cycle-list
-      %span#cycle-right Next
-      %span#cycle-left Prev
-      / %span#cycle-counter
-    / end id cycle
+    /   / end cycle-list
+    /   %span#cycle-right Next
+    /   %span#cycle-left Prev
+
+    /   / %span#cycle-counter  
+    / / end id cycle
+    / #slideshow
+    /   %a{href: "", class: "slideshow-btn"} 
+    /     %i.icon.icon-left 
+    /   .slideshow-viewport
+    /     %ul#slideshow-list
+    /       - if @property.property_photos.present?
+    /         - @property.property_photos.each do |pp|
+    /           %li.thumbnail
+    /             %a{class: "media-photo", href: "#"}
+    /               = image_tag pp.photo.preview.url, :alt => @property.name, :width => 72, :height => 72
+    /       - else
+    /         %li
+    /           = image_tag PropertyPhoto.new.photo.preview.url, :alt => @property.name
+    /           %img{alt: "Img", src: "/assets/_temp/11.jpg"}
+    /   %a{href: "", class: "slideshow-btn"}
+    /     %i.icon.icon-right
+
     #sp-container
       %ul#sp-tabs
         %li.t-overview.active
